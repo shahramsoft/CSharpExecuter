@@ -3,3 +3,5 @@
 ################################################################################
 
 /CSharpProgramRunner/obj/Debug
+/CSharpProgramRunner/bin/Debug
+/.vs/CSharpProgramRunner/v16/Server/sqlite3
