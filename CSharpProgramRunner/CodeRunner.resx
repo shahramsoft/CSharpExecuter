@@ -119,6 +119,7 @@
   </resheader>
   <data name="TxtCode.Text" xml:space="preserve">
     <value>using System;
+using System.Collections.Generic;
 
 namespace Kasra
 {
@@ -126,24 +127,38 @@ namespace Kasra
     {
         public ResultViewModel Execute(int number, string name)
         {
+            var lstresultValue = new List&lt;ResultValues&gt; 
+            {
+                new ResultValues
+                {
+                    Key="test",
+                    Value="yes"
+                }
+            };
+           
             if (number &gt; 1)
-                  return  new ResultViewModel
+                return new ResultViewModel
                 {
                     Validate = true,
-                    Message = ""
+                    Message = lstresultValue
                 };
-           return  new ResultViewModel
+            return new ResultViewModel
             {
                 Validate = false,
-                Message = ""
+                Message = lstresultValue
             };
-            
+
         }
     }
     public class ResultViewModel
     {
         public bool Validate { get; set; }
-        public string Message { get; set; }
+        public object Message { get; set; }
+    }
+    public class ResultValues
+    {
+        public string Key { get; set; }
+        public string Value { get; set; }
     }
 }
 

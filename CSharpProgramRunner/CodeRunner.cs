@@ -67,6 +67,6 @@ namespace CSharpProgramRunner
     public class ResultViewModel
     {
         public bool Validate { get; set; }
-        public string Message { get; set; }
+        public object Message { get; set; }
     }
 }
